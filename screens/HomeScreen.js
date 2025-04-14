@@ -34,7 +34,11 @@ const HomeScreen = () => {
 
         console.log(`value: ${validValue}`);
     };
-    
+
+    useEffect(() => {
+        const converted = parseFloat(amount) * rate;
+        setConvertedAmount(converted.toFixed(2));
+    }, [rate, amount]);
 
     return (
         <View style={styles.container}>
